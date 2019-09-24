@@ -2,20 +2,33 @@ import React from 'react';
 
 class Login extends React.Component {
     constructor() {
-        super()
-        this.state = {};
+        super();
+        this.state = {
+            Uname:'didnt change',
+            password:0
+        };
+        this.getform = this.getform.bind(this);
+    }
+    getform() {
+        const data = document.getElementById("input1").value ;
+        this.setState({
+            Uname: data,
+            password: 1234
+        })
     }
     render() {
         return(
-            <form className="Formlogin">
-                <input type="text" name="Uname" placeholder ="Uname"></input>
-                <input type="password" placeholder ="password"></input>
-                <button type='submit' value='Submit'>Click me</button>
-            </form>
+            <div>
+                <form>
+                    <label>
+                        Name:
+                        <input type="text" name="name" />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
         );
     }
 }
-function getform() {
-    let v  = document.getElementsByClassName("Formlogin");
-}
+
 export default Login;
